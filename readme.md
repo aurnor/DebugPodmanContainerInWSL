@@ -1,4 +1,4 @@
-﻿# Steps to deploy this web API to a Podman container in WSL, and to debug it
+# Steps to deploy this web API to a Podman container in WSL, and to debug it
 
 ### 1. Install Podman on WSL:
 `sudo apt -y install podman`
