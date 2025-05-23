@@ -13,26 +13,34 @@
 ### 5. Build the image:
 `podman build -t mywebapp .`
 
-### 6. Run the container: 
+### 6. Check that the image is created:
+`podman images`
+
+
+### 7. Run the container: 
 `podman run -d -p 5000:8080 --name mywebapp mywebapp`
 
-### 7. Check that the container is running: 
+### 8. Check that the container is running: 
 `podman ps`
 
-### 8. Attach to the container from Visual Studio / Debug /  Attach to Process: 
+### 9. Check that the web API is running:
+- Open your browser and go to `http://localhost:5000/weatherforecast`
+
+### 10. Attach to the container from Visual Studio / Debug /  Attach to Process: 
 -  In `Connection Type`, choose `Docker (Linux Container)`  
--  Click the `Fin`d button and type `tcp://localhost:2375` in `Docker host`, then click `Refresh`.
+-  Click the `Find` button and type `tcp://localhost:2375` in `Docker host`, then click `Refresh`.
 - Select the container and click `OK`.
 - Select the container process (dotnet) and click `Attach`.
 
-### 9. Add some breakpoints in the code.
+### 11. Add some breakpoints in the code.
 
-### 10. Access the web API: Open your browser and go to http://localhost:5000/weatherforecast
+### 12. Access the web API: Open your browser and go to `http://localhost:5000/weatherforecast`
 
 
-### 11. Run the following commands to cleanup the containers and stop podman listening on port 2375 the : 
+### 13. Run the following commands to cleanup the containers, image and stop podman listening on port 2375: 
 - podman ps
 - podman stop <container_id>
 - podman rm <container_id>
+- podman rmi mywebapp or podman image rm mywebapp | <image_id>
 - pkill -f "podman system service"
 
